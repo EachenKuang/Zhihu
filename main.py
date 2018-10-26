@@ -14,6 +14,7 @@ def login():
         client.login_in_terminal()
         client.save_token(TOKEN_FILE)
 
+    """
     me = client.me()
     print('name', me.name)
     print('headline', me.headline)
@@ -53,13 +54,21 @@ def login():
     # 获取最近发表的 5 个文章
     for _, article in zip(range(5), me.articles):
         print(article.title, article.voteup_count)
+    """
+    topic = client.topic(19560072)  # 转基因
+    # topic = client.topic(19578906)  # 气候变化
+    # topic = client.topic(19551296)  # 网络游戏
 
-    topic = client.topic()
-    questions = topic.unanswered_questions
-    for question in questions:
+    answers_count = 0
+    # questions = topic.unanswered_questions
+    for question in topic.unanswered_questions:
+        print(question.id)
         print(question.title)
-        for answer in question.answers:
-            print(answer.content)
+        print(question.answer_count)
+        answers_count += question.answer_count
+    print("总共有{0}个回答".format(answers_count))
+
+
 
 login()
 
