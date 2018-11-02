@@ -55,34 +55,22 @@ def login():
     for _, article in zip(range(5), me.articles):
         print(article.title, article.voteup_count)
     """
-    # topic = client.topic(19560072)  # 转基因
+    topic = client.topic(19560072)  # 转基因
     # topic = client.topic(19578906)  # 气候变化
     # topic = client.topic(19551296)  # 网络游戏
 
-    # answers_count = 0
-    # questions = topic.unanswered_questions
-    # for question in topic.unanswered_questions:
-    #     print(question.id)
-    #     print(question.title)
-        # print(question.answer_count)
-        # answers_count += question.answer_count
-        # for answer in question.answers:
-        #     print(answer.author.id,answer.author.name)
-        #     answer.save('Data\\Gene\\'+str(question.id)+'#'+question.title,str(answer.author.id)+'#'+answer.author.name)
-    # print("总共有{0}个回答".format(answers_count))
-    path = r'D:\Kuangyichen\Repository_py3\Zhihu\Data\lefted'
-    questions = []
-    with open(path, 'r', encoding='UTF8') as Reader:
-        for line in Reader.readlines():
-            questions.append(int(line))
-    for q in questions:
-        question_t = client.question(q)
-        print(str(q)+"start")
-        for answer in question_t.answers:
-            print(answer.author.id, answer.author.name)
-            answer.save('Data\\Gene\\' + str(question_t.id) + '#' + question_t.title,
-                        str(answer.author.id) + '#' + answer.author.name)
-        print(str(q) + "end")
+    answers_count = 0
+    for question in topic.unanswered_questions:
+        print(question.id)
+        print(question.title)
+        print(question.answer_count)
+        answers_count += question.answer_count
+        for answer in question.answers:
+            print(answer.author.id,answer.author.name)
+            answer.save('Data\\Gene\\'+str(question.id)+'#'+question.title, str(answer.author.id)+'#'+answer.author.name)
+    print("总共有{0}个回答".format(answers_count))
 
-login()
 
+# login()
+if __name__ == '__main__':
+    pass
