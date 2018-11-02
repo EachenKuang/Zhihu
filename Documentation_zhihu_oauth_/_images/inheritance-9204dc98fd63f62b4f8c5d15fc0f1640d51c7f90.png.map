@@ -1,0 +1,12 @@
+<map id="inheritance04f141836c" name="inheritance04f141836c">
+<area shape="rect" id="node1" href="#zhihu_oauth.exception.CantGetTicketsWarning" target="_top" title="CantGetTicketsWarning" alt="" coords="2,35,79,47"/>
+<area shape="rect" id="node2" href="#zhihu_oauth.exception.ZhihuWarning" target="_top" title="ZhihuWarning" alt="" coords="104,2,154,14"/>
+<area shape="rect" id="node7" href="#zhihu_oauth.exception.IgnoreErrorDataWarning" target="_top" title="IgnoreErrorDataWarning" alt="" coords="90,35,168,47"/>
+<area shape="rect" id="node3" href="#zhihu_oauth.exception.GetDataErrorException" target="_top" title="GetDataErrorException" alt="" coords="281,69,357,80"/>
+<area shape="rect" id="node4" href="#zhihu_oauth.exception.UnexpectedResponseException" target="_top" title="UnexpectedResponseException" alt="" coords="269,35,369,47"/>
+<area shape="rect" id="node5" href="#zhihu_oauth.exception.IdMustBeIntException" target="_top" title="IdMustBeIntException" alt="" coords="380,35,451,47"/>
+<area shape="rect" id="node6" href="#zhihu_oauth.exception.ZhihuException" target="_top" title="ZhihuException" alt="" coords="515,2,570,14"/>
+<area shape="rect" id="node8" href="#zhihu_oauth.exception.NeedCaptchaException" target="_top" title="NeedCaptchaException" alt="" coords="463,35,540,47"/>
+<area shape="rect" id="node9" href="#zhihu_oauth.exception.NeedLoginException" target="_top" title="NeedLoginException" alt="" coords="550,35,619,47"/>
+<area shape="rect" id="node11" href="#zhihu_oauth.exception.UnimplementedException" target="_top" title="UnimplementedException" alt="" coords="681,35,766,47"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="inheritance5a42661892" name="inheritance5a42661892">
+<area shape="rect" id="node1" title="Base class that all auth implementations derive from" alt="" coords="43,5,127,31"/>
+<area shape="rect" id="node3" href="index.html#zhihu_oauth.oauth.im_android.ImZhihuAndroidClient" target="_top" title="ImZhihuAndroidClient" alt="" coords="5,79,165,104"/>
+<area shape="rect" id="node2" href="#zhihu_oauth.oauth.before_login_auth.BeforeLoginAuth" target="_top" title="BeforeLoginAuth" alt="" coords="21,152,149,177"/>
+</map>

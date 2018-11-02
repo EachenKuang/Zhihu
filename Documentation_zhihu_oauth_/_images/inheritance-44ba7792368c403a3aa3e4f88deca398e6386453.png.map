@@ -1,0 +1,15 @@
+<map id="inheritance46a8527f09" name="inheritance46a8527f09">
+<area shape="rect" id="node1" href="index.html#zhihu_oauth.zhcls.answer.Answer" target="_top" title="Answer" alt="" coords="5,67,66,88"/>
+<area shape="rect" id="node2" href="#zhihu_oauth.zhcls.base.Base" target="_top" title="Base" alt="" coords="349,5,410,26"/>
+<area shape="rect" id="node3" href="index.html#zhihu_oauth.zhcls.article.Article" target="_top" title="Article" alt="" coords="86,67,147,88"/>
+<area shape="rect" id="node5" href="index.html#zhihu_oauth.zhcls.collection.Collection" target="_top" title="Collection" alt="" coords="168,67,240,88"/>
+<area shape="rect" id="node6" href="index.html#zhihu_oauth.zhcls.column.Column" target="_top" title="Column" alt="" coords="261,67,322,88"/>
+<area shape="rect" id="node7" href="index.html#zhihu_oauth.zhcls.comment.Comment" target="_top" title="Comment" alt="" coords="343,67,417,88"/>
+<area shape="rect" id="node9" href="index.html#zhihu_oauth.zhcls.people.People" target="_top" title="People" alt="" coords="438,67,499,88"/>
+<area shape="rect" id="node10" href="index.html#zhihu_oauth.zhcls.question.Question" target="_top" title="Question" alt="" coords="520,67,587,88"/>
+<area shape="rect" id="node11" href="index.html#zhihu_oauth.zhcls.topic.Topic" target="_top" title="Topic" alt="" coords="608,67,669,88"/>
+<area shape="rect" id="node12" href="index.html#zhihu_oauth.zhcls.topic.TopicIndex" target="_top" title="TopicIndex" alt="" coords="690,67,763,88"/>
+<area shape="rect" id="node4" href="index.html#zhihu_oauth.zhcls.people.Badge" target="_top" title="Badge" alt="" coords="431,5,492,26"/>
+<area shape="rect" id="node8" href="index.html#zhihu_oauth.zhcls.me.Me" target="_top" title="Me" alt="" coords="438,129,499,151"/>
+<area shape="rect" id="node13" href="index.html#zhihu_oauth.zhcls.topic.TopicIndexSection" target="_top" title="自身是一个 :any:`Question` 对象的迭代器，附带了 title 属性和另一个相关话题的迭代器。" alt="" coords="513,5,627,26"/>
+</map>
