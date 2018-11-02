@@ -1,0 +1,128 @@
+<meta name="referrer" content="no-referrer" />
+<meta charset="utf-8" />
+<p>
+	更新一下，简单的七层攻击已经对璞谷塘商城无效了，所以我补充一下细节：
+</p>
+<p>
+	璞谷塘商城是一个动态生成的页面，虽然用了阿里云的 CDN（我 nslookup 了解析看到了 
+	<a href="https://link.zhihu.com/?target=http%3A//kunlunar.com" class=" external" target="_blank" rel="nofollow noreferrer">
+		<span class="invisible">
+			http://
+		</span>
+		<span class="visible">
+			kunlunar.com
+		</span>
+		<span class="invisible">
+		</span>
+	</a>
+	 域名，这是阿里云内部使用的），但是所有的请求都要回源。
+</p>
+<p>
+	过去主站没有开缓存，我的几百并发直接完整地砸在了源站，所以直接让源站的 IIS 不堪重负然后线程溢出了。
+</p>
+<p>
+	现在他把几个主要页面都缓存了，换句话说生成的 HTML 直接分发到了 CDN 节点，所以单纯的七层变异攻击已经无效了。
+</p>
+<br>
+<figure>
+	<img src="https://pic3.zhimg.com/v2-e09cf3604cc3d9b289e5b99f5255f4ba_b.png" data-rawwidth="704" data-rawheight="360" class="origin_image zh-lightbox-thumb" width="704" data-original="https://pic3.zhimg.com/v2-e09cf3604cc3d9b289e5b99f5255f4ba_r.jpg">
+</figure>
+<blockquote>
+	如上图所示，HIT 到了 CDN 节点。
+</blockquote>
+<br>
+<p>
+	我在这里给大家补充几个思路，供有心人研究吧：
+</p>
+<p>
+	1. 带上 cache-control:no-cache 和  pragma
+	<b>
+		:
+	</b>
+	no-cache 可以绕开 CDN 缓存直接回源（ASP 是动态页面，除非崔化钠手下的技术人员脑子有坑否则不会开 CDN 镜像，所以强刷时 CDN 会直接回源的，如下图所示）
+</p>
+<br>
+<figure>
+	<img src="https://pic1.zhimg.com/v2-754ba088c3aeaf2f3eb2e87c496758fc_b.png" data-rawwidth="739" data-rawheight="306" class="origin_image zh-lightbox-thumb" width="739" data-original="https://pic1.zhimg.com/v2-754ba088c3aeaf2f3eb2e87c496758fc_r.jpg">
+</figure>
+<br>
+<p>
+	2. 直接访问动态页面。比如璞谷塘商城的 
+	<a href="https://link.zhihu.com/?target=http%3A//www.pgtcyy.com/new" class=" wrap external" target="_blank" rel="nofollow noreferrer">
+		本周新品
+	</a>
+	 这个页面是纯动态生成，无论怎么请求 CDN 都返回 MISS。
+</p>
+<p>
+	3. 直接轰炸登录和注册页面。璞谷塘商城的页面没有 HTTPS，对用户传输的数据都是明文传输。我使用了常规的抓包工具直接在请求中找到了我输入的 test 等字样。所以我们可以直接发动 POST 攻击。POST Form Data 格式为：
+</p>
+<p>
+	登录页面：username=xxx&password=xxx
+</p>
+<p>
+	注册页面：username=xxx&smscode=xxx&pwd=xxx&pwd1=xxx&readme=[0,1]
+</p>
+<p>
+	通过 POST 直接将请求完整地砸在源站的 IIS 和数据库上，可以直接让源站溢出，至少也让数据库日志爆炸
+</p>
+<blockquote>
+	顺便说一句，璞谷塘商城的注册验证码 API 是 “
+	<a href="https://link.zhihu.com/?target=http%3A//www.pgtcyy.com/register/sendcode" class=" external" target="_blank" rel="nofollow noreferrer">
+		<span class="invisible">
+			http://www.
+		</span>
+		<span class="visible">
+			pgtcyy.com/register/sen
+		</span>
+		<span class="invisible">
+			dcode
+		</span>
+		<span class="ellipsis">
+		</span>
+	</a>
+	”，拿来加入到短信轰炸机中也很不错。
+</blockquote>
+<p>
+	当然，如果有有心人或者技术大牛找到了源站，烦请通知我。那样我就可以直接上四层攻击了。
+</p>
+<br>
+<p>
+	=======
+</p>
+<br>
+<p>
+	别关注了，这个璞谷塘商城，网站架构有问题。
+</p>
+<p>
+	我定点了产品搜索、新品上架和特定两个产品页面，进行了中等强度的压力测试。
+</p>
+<p>
+	结果我才用了 300 并发，我就把璞谷塘商城炸了。。
+</p>
+<p>
+	是的，300 并发、300 并发、300 并发，这玩意就炸了。。炸了。。。。炸了。。。。。
+</p>
+<p>
+	我简直不好说什么。
+</p>
+<p>
+	等可以恢复访问了，我发现——woc 他家网站用的 IIS 和 
+	<a href="https://link.zhihu.com/?target=http%3A//ASP.NET" class=" external" target="_blank" rel="nofollow noreferrer">
+		<span class="invisible">
+			http://
+		</span>
+		<span class="visible">
+			ASP.NET
+		</span>
+		<span class="invisible">
+		</span>
+	</a>
+	 驱动的，而且没做缓存。
+</p>
+<p>
+	我似乎懂了。。。
+</p>
+<p>
+	然后我用变异七层攻击直接暴打了一顿，现在他的站已经 504 了。
+
+</p>

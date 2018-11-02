@@ -1,0 +1,51 @@
+<meta name="referrer" content="no-referrer" />
+<meta charset="utf-8" />
+<p>
+	首先，关于金属镉与水稻的联系， 
+	<a class="member_mention" href="https://www.zhihu.com/people/140a506e05d4b1cac467b4d647990723" data-hash="140a506e05d4b1cac467b4d647990723" data-hovercard="p$b$140a506e05d4b1cac467b4d647990723">
+		@李雷
+	</a>
+	 已经说的很清楚了，我简单回答一下关于基因敲除技术。
+</p>
+<p>
+	目前的基因编辑技术普遍采用 CRISPR-Cas9 进行基因敲除。
+</p>
+<p>
+	CRISPR ：规律成簇的间隔短回文重复（Clustered Regularly Interspaced Short Palindromic Repeats），是大多数细菌及古细菌中的一种获得性免疫方式。
+</p>
+<p>
+	而 Cas9 是一种含有核酸内切酶活性的蛋白，这种蛋白可以按照 guide RNA 的指引切掉标靶 DNA
+</p>
+<blockquote>
+	The Cas9 endonuclease is a four-component system that includes two small RNA molecules named CRISPR RNA (crRNA) and trans-activating CRISPR RNA (tracrRNA).Jennifer Doudna and 
+	<a href="https://link.zhihu.com/?target=https%3A//en.wikipedia.org/wiki/Emmanuelle_Charpentier" class=" wrap external" target="_blank" rel="nofollow noreferrer">
+		Emmanuelle Charpentier
+	</a>
+	 re-engineered the Cas9 endonuclease into a more manageable two-component system by fusing the two RNA molecules into a "single-guide RNA" that, when mixed with Cas9, could find and cut the DNA target specified by the guide RNA. By manipulating the nucleotide sequence of the guide RNA, the artificial Cas9 system could be programmed to target any DNA sequence for cleavage.
+</blockquote>
+<p>
+	CRISPR 本来是细菌的一种获得性免疫，它可以将外来 DNA 片段整合进自己的基因组，然后转化出 RNA ，经过一些剪切之后，利用这些 RNA 把带有 DNA 内切酶活性的 Cas 蛋白直接引导到外源序列的位置，于是，外源DNA就可以被剪断。对于细菌而言，就完成了对外来病原体的快速精确打击。
+</p>
+<figure>
+	<img src="https://pic4.zhimg.com/v2-eba0345b2969c23bd4128100284febe3_b.jpg" data-rawwidth="865" data-rawheight="700" class="origin_image zh-lightbox-thumb" width="865" data-original="https://pic4.zhimg.com/v2-eba0345b2969c23bd4128100284febe3_r.jpg">
+</figure>
+<p>
+	将这种系统应用到生物自身的基因组里，也就完成了基因敲除的目的。
+</p>
+<blockquote>
+	CRISPR/Cas9 often employs a plasmid to transfect the target cells. The main components of this plasmid are displayed in the image and listed in the table. The crRNA needs to be designed for each application as this is the sequence that Cas9 uses to identify and directly bind to the cell's DNA. The crRNA must bind only where editing is desired. The repair template is designed for each application, as it must overlap with the sequences on either side of the cut and code for the insertion sequence.
+	<br>
+	Multiple crRNAs and the tracrRNA can be packaged together to form a single-guide RNA (sgRNA).This sgRNA can be joined together with the Cas9 gene and made into a plasmid in order to be transfected into cells.
+</blockquote>
+<p>
+	CRISPR / Cas9经常采用质粒来导入靶细胞。质粒的主要由 crRNA 、tracrRNA 、sgRNA、Cas9、修复模板构成。crRNA 需要针对应用不同而分别设计，因为这是 Cas9 用于鉴定和直接结合细胞 DNA 的序列。crRNA 必须在需要编辑的地方才能绑定。修复模板是为每个应用程序设计的，因为它必须与切割两侧的序列和插入序列的代码重叠。
+</p>
+<figure>
+	<img src="https://pic1.zhimg.com/v2-9efd0f696dfaa23ce5aec4c5e6d5cb7c_b.jpg" data-rawwidth="865" data-rawheight="889" class="origin_image zh-lightbox-thumb" width="865" data-original="https://pic1.zhimg.com/v2-9efd0f696dfaa23ce5aec4c5e6d5cb7c_r.jpg">
+</figure>
+<p>
+	<br>
+</p>
+<p>
+	这种技术在实际操作中非常方便，而且精度较高。只需要把两段序列导入细胞：一段序列是 Cas9 蛋白的基因，它可以切断 DNA 双链，就算是 DNA 甲基化的位点依然可以切除。另一段用来转录 RNA，前一部分是与目标基因配对的，后一半用来与蛋白结合，切断目标基因。结果通常是基因中间被插入或者删除了几个碱基，导致原基因沉默，也就是完成了基因敲除。
+</p>

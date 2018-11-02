@@ -1,0 +1,49 @@
+<meta name="referrer" content="no-referrer" />
+<meta charset="utf-8" />
+刚才稍微查了一下，似乎如果要比较按照她的实验中的数据应该用chi-square test之类的独立性测试，但是丢到R里面提示说样本数量太小，于是又查了一下尝试用Fisher's exact test，结果如下：
+<br>
+<br>
+1.吃了转基因的公猪和没吃转基因的公猪：
+<br>
+	Fisher's Exact Test for Count Data
+<br>
+<br>
+data:  x[, c(2, 4)]
+<br>
+p-value = 0.08572
+<br>
+alternative hypothesis: two.sided
+<br>
+<br>
+2.吃了转基因的母猪和没吃转基因的母猪:
+<br>
+	Fisher's Exact Test for Count Data
+<br>
+<br>
+data:  x[, c(1, 3)] 
+<br>
+p-value = 0.1226
+<br>
+alternative hypothesis: two.sided 
+<br>
+<br>
+3.x：
+<br>
+         F_N M_N F_G M_G
+<br>
+No         3   1   4   4
+<br>
+Mild      15  16  11  12
+<br>
+Moderate  12  17   6  12
+<br>
+Severe     7   2  15   8
+<br>
+<br>
+这种程度的p值，应该不算是有统计上的显著差别吧。不过我对统计学也只懂一点皮毛，如果上面的结果有问题请专业人士指出来。
+<br>
+<br>
+另外似乎之前有几篇debunk也提到说胃红色的程度并不能可靠地预测stomach inflammation。
+<br>
+<br>
+所以这应该是junk science了，抱歉浪费大家时间提问了。

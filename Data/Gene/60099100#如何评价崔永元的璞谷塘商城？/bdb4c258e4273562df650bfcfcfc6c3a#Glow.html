@@ -1,0 +1,29 @@
+<meta name="referrer" content="no-referrer" />
+<meta charset="utf-8" />
+首先先表明立场：特别不喜欢崔！
+<br>
+答主是个技术渣渣，就从简单点的技术分析下这个商城吧！
+<br>
+第一☝️，非常显眼的是网站是Http的，做买卖连4000块一年的https证书都不买，极度缺乏安全意识，或者是比较抠门吧，或许一年也赚不了几个钱，当然人傻钱多的人多了另当别论；
+<br>
+第二☝️，前端与后台的交互在不使用https的情况下居然是明文的！！！稍微认真听过课的同学都知道传输这些敏感数据的时候要加密一下！不说像淘宝那样复杂，简单的RSA总是能做的吧！
+<br>
+以下是登录时，抓包获取到的数据对比（对比淘宝）：
+<br>
+先是淘宝的，可以看到一者基于HTTPS，二者对传输的各类敏感数据都做了加密，也使用了各种安全策略
+<br>
+<figure>
+	<img data-rawwidth="960" data-rawheight="720" src="https://pic3.zhimg.com/v2-ab0d90c856fcf74f4621a67a6bc51082_b.jpg" class="origin_image zh-lightbox-thumb" width="960" data-original="https://pic3.zhimg.com/v2-ab0d90c856fcf74f4621a67a6bc51082_r.jpg">
+</figure>
+<br>
+以下是噗噗城的，
+<br>
+<figure>
+	<img data-rawwidth="960" data-rawheight="720" src="https://pic2.zhimg.com/v2-cd9459b684b089ca8caf8cc83e5ed549_b.jpg" class="origin_image zh-lightbox-thumb" width="960" data-original="https://pic2.zhimg.com/v2-cd9459b684b089ca8caf8cc83e5ed549_r.jpg">
+</figure>
+<br>
+test。 test 123!!!!!!!!!
+<br>
+<figure>
+	<img data-rawwidth="224" data-rawheight="319" src="https://pic3.zhimg.com/v2-7e5d4e6586709f25124a50fc7ff49eb6_b.jpg" class="content_image" width="224">
+</figure>

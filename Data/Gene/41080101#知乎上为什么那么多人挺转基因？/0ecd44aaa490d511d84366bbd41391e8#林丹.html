@@ -1,0 +1,88 @@
+<meta name="referrer" content="no-referrer" />
+<meta charset="utf-8" />
+请查看知乎的回答排名算法。说具体点，不是知乎很多人挺转基因，是因为知乎的机制，只要有（核心团体20-50人左右）人霸住这个话题，就会让你看到只代表他们意见的答案。
+<br>
+<br>
+<p>
+	举个例子，在去年5月，有个题主的知乎提了以下这个问题
+</p>
+<p>
+	<a href="https://www.zhihu.com/question/30028600" class="internal">
+		为什么转基因在新闻门户（腾讯、网易）大部分人都是反对的，而在知乎大部分人都是支持的？是否有水军参与？ - 自然科学
+	</a>
+</p>
+<br>
+<p>
+	问题在2016/2/29之前回答者寥寥，不过20人左右，最高赞数也不过20-50.但是之后有几个超高赞数的答主进入，一下子极大的改变了回帖的生态。
+</p>
+<figure>
+	<img src="https://pic2.zhimg.com/812669ff330670b7c67596e7c349c5e1_b.png" data-rawwidth="361" data-rawheight="37" class="content_image" width="361">
+</figure>
+<br>
+<p>
+	<figure>
+		<img src="https://pic2.zhimg.com/39b9a97f210b16bb3084a61eeaf4eb09_b.jpg" data-rawwidth="773" data-rawheight="426" class="origin_image zh-lightbox-thumb" width="773" data-original="https://pic2.zhimg.com/39b9a97f210b16bb3084a61eeaf4eb09_r.jpg">
+	</figure>
+	图1：3月6日左右的点赞数和回答排名。
+</p>
+<br>
+<p>
+	可以看到，排名上晚发帖的比先发帖的有优势，赞数多的比少的有优势，偏中立的（或貌似偏中立的）有优势。其中的道理是，后发帖的支持者可以去打压先发帖的回答，而先发帖的支持者大部分已经不再关注该问题。偏中立的（或貌似偏中立的）的受到的打压较少。
+</p>
+<br>
+<p>
+	另外一个可以看到的现象是，早期的帖子，并不见得会有很多人去点赞。点赞数呈现突发的暴涨形态，而且集中在某几个ID上,即使是相近立场的回答,也不会有很多人去给多个回答点赞。
+</p>
+<br>
+<p>
+	接着我们看看点赞和反对意见对回答排名的影响。知乎的排名系统是基于
+	<b>
+		威尔逊算法
+	</b>
+	的，当样本比较大的时候，近似于有该观点的赞同/反对加权比（赞同有权重）。当样本小的时候，积分会略低于这个比例，而且样本越小，影响越大。
+</p>
+<br>
+<p>
+	我试过给排名第一，第二的两个答案（空门打飞, Eidosper) 分别点赞/反对，观察其
+</p>
+<p>
+	影响（见图2）。当不做任何操作，或是都点赞的时候，还是空门打飞的排名高。但是当都点反对的时候，反而是Eidosper的排名高。看来点赞数比较高的回答，反对的权重会更高一些。
+</p>
+<br>
+<p>
+	<figure>
+		<img src="https://pic2.zhimg.com/d85b3fa597c3de08351aa4b1f9861ab5_b.jpg" data-rawwidth="867" data-rawheight="369" class="origin_image zh-lightbox-thumb" width="867" data-original="https://pic2.zhimg.com/d85b3fa597c3de08351aa4b1f9861ab5_r.jpg">
+	</figure>
+	图2：点赞/反对，对排名的影响。
+</p>
+<br>
+<p>
+	我也给一些点赞数为零的回答点赞。发现有的排名上涨迅速（最高者到达第6位），有的上涨有限（20位左右）。回答的较早的答案上升的速度比较快一些。
+</p>
+<br>
+<p>
+	<figure>
+		<img src="https://pic1.zhimg.com/f33ab4ca0678132dd4d8e52da9d311a8_b.jpg" data-rawwidth="1241" data-rawheight="140" class="origin_image zh-lightbox-thumb" width="1241" data-original="https://pic1.zhimg.com/f33ab4ca0678132dd4d8e52da9d311a8_r.jpg">
+	</figure>
+	图3： 当前回答排名
+</p>
+<br>
+<br>
+把当前该问题的回答的排序列出来，就是图3了（基本上也是大多数人能看到的回答）。可以看到，回答要靠前，需要人多势众（前三），如果观点和该圈子的人不同，就更需要了（吕小布007）。要么就是资格老(Xi Yang)。其他的想要把回答挤入前十，而又和这个圈子的观点不同，就需要投胎晚了 （张明，Huang He)。不过投胎晚，点赞数也少，很容易被打下去。
+<br>
+<br>
+另外，我看到有个新的答案【
+<a class="internal" href="https://www.zhihu.com/people/zhao-qian-90-58">
+	赵潜
+</a>
+，学生】在只有三个赞的情况下升到了第一名，因为何时和吃完给他点了赞。所谓的最佳回答者的赞的权重会比较高。那么最佳回答者本身也是可以通过刷赞来实现的。
+<br>
+<br>
+所以，只要
+<br>
+1. 有个20-50人的小团体，给自己人刷赞攒积分，踩反对观点的回答。
+<br>
+2. 有若干个带大量粉丝的大V定期出现发言
+<br>
+<br>
+那么必然是会出现在一个话题下，只有一个强势观点的情景。
