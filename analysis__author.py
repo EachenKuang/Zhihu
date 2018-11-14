@@ -1,5 +1,6 @@
 import os
 from collections import OrderedDict
+from zhihu_oauth import ZhihuClient
 
 
 def print_author():
@@ -23,6 +24,7 @@ def print_author():
     for key,value in author_inorder.items():
         print(key+':'+str(value))
 
+
 def analyze(authors, client):
     """
     分析每个作者的结构信息
@@ -30,8 +32,37 @@ def analyze(authors, client):
     :return:
     """
     for id in authors:
-        people = client.people(id)
-        print(id,sep='\t')
+        yield client.people(id)
+        # print(id,sep='\t')
+
+
+def get_authors_from_files(file_path):
+    with open(file_path, 'r', encoding='utf8') as Reader:
+        # return [line.split('#')[0] for line in Reader.readlines()[1:]]
+        for line in Reader.readlines()[1:]:
+            yield line.split('#')[0]
+
 
 if __name__ == '__main__':
-    pass
+
+    client = ZhihuClient()
+    client.load_token('token.pkl')
+
+    authors_file_path = r"Data\author_left"
+    authors_list = get_authors_from_files(authors_file_path)
+    # print(authors_list)
+
+    # person feature
+    # (name\gender\follower_count\following_count\thanked_count\collected_count\
+    # answer_count\article_count
+    # voteup_count\question_count\*locations\*employments\*educations)
+
+    for person in analyze(authors_list, client):
+        if person.over:
+            print(person.id,person.over_reason,sep='\t')
+            continue
+        print(person.id, person.name, person.gender, person.follower_count,
+              person.following_count, person.voteup_count, person.thanked_count,
+              person.collected_count, person.answer_count, person.question_count, person.article_count,
+              [location.name for location in person.locations][0] if any(location.name for location in person.locations) else None,
+              sep='\t',end='\n')
